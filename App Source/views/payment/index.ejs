@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Payment</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stylesheets/payment/style.css">
+    <link rel="stylesheet" href="./stylesheets/layout/header-sub/style.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--------- container ----------->
+    <div class="container-fuild">
+        <!--------- header ----------->
+        <%- include('../layout/header-sub.ejs'); %>
+        
+        <!--------- content----------->
+        <div class='content'>
+            <div class='content-container row'>
+                <div class='col-md-9 main-container'>
+                    <div class='main'>
+                        <div class='main-header row align-items-center'>
+                            <div class='col-md-5'>
+                                <span>Sản phẩm</span>
+                            </div>
+                            <div class='col-md-3'>
+                                <span>Đơn giá</span>
+                            </div>
+                            <div class='col-md-2'>
+                                <span>Số lượng</span>
+                            </div>
+                            <div class='col-md-2'>
+                                <span>Số tiền</span>
+                            </div>
+                        </div>
+                        <div class='main-content' id='main-content'>
+                            <!--shop container-->
+                            <!-- xử lý trong localStorage-->
+                        </div> <!-- end main content -->
+                    </div>
+                </div>
+
+                <!-- giao hang container -->
+                <div class='col-md-3 side-container'>
+                    <!-- item 1 -->
+                    <div class='side-item-container'>
+                        <div class='side-item-header'>
+                            <span class='side-header-title'>Giao hàng</span>
+                            
+                        </div>
+                        <div class='side-item-main'>
+                            <div>
+                                <span style='display:inline' id='user-name'></span>
+                                <span style='display:inline'>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>                      
+                                <span style='display:inline' id='user-phone'></span> 
+                            </div> 
+                            <span style='font-size: 13px; color:rgb(126, 126, 126)' id='text-adress'></span>
+                        </div>
+                    </div>
+
+                    <!-- item 2 -->
+                    <div class='side-item-container'>
+                        <div class='side-item-header'>
+                            <span class='side-header-title'>Đơn hàng</span>
+                            <div id='btn-select-cancel-container' >
+                                <a href="http://localhost:3001/cart">
+                                    <button class='btn btn-cancel' id='btn-select-cancel'>Sửa</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class='side-item-main'>
+                            <div class='side-item-header' style='margin-top: 10px;'>
+                                <span class='side-header-content'><span id='amount-item'></span> sản phẩm</span>
+                                <span class='side-header-subtitle' >
+                                    <div id='btn-moreinfo-container'>
+                                        <span id='btn-moreinfo'>Xem thông tin</span>
+                                        <span id='icon-moreinfo'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </span>
+                                <div class='side-list-item-container'>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class='side-item-field'>
+                                <span class='side-item-title1'>Tạm tính</span>
+                                <span class='side-item-title2'><span id='provisional-price'></span>đ</span>
+                            </div>
+                            <div class='side-item-field'>
+                                <span class='side-item-title1'>Phí vận chuyển</span>
+                                <span class='side-item-title2'><span id='ship-price-total'></span>đ</span>
+                            </div>
+                            <div class='side-item-field'>
+                                <span class='side-item-content-green'>Khuyến mãi</span>
+                                <span class='side-item-title2 side-item-content-green'>-<span id='price-discount'></span>đ</span>
+                            </div>
+                            <hr>
+                            <div class='side-item-field'>
+                                <span class='side-header-title'>Thành tiền</span>
+                                <span class='side-item-finaltitle2'><span id='order-price'></span>đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="button" style='width: 100%;'class="btn btn-submit" id='btn-submit'>Đặt hàng</button>
+                    </div>
+                </div> <!-- end side container -->
+            </div>
+            
+        </div> <!--------- end content ----------->
+
+        
+        <%- include('../layout/footer.ejs'); %>
+    </div><!--------- end container ----------->
+
+    <!-- javascript -->
+    <script src="./javascripts/payment/script.js"></script>
+    <script src="./javascripts/payment/localStorage.js"></script>
+    <script src="/javascripts/layout/header-sub/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

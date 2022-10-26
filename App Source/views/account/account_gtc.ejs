@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Account</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/layout/header-main/style.css">
+    <link rel="stylesheet" href="/stylesheets/layout/footer/style.css">
+    <link rel="stylesheet" href="/stylesheets/account/style.css">
+    
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <!--------- container ----------->
+    <div class="container-fuild">
+        
+        <!--------- header ----------->
+        <%- include('../layout/header-main.ejs'); %>
+        
+        <!--------- content----------->
+        
+        <div class="content-general">
+            <div class="container">
+                <div class="row">
+                    <div class="side-bar col-md-3">
+                        <p class="name-bar">Xin chào</p>
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link" id="v-pills-userinfo-tab" data-toggle="pill" href="#v-pills-userinfo" role="tab" aria-controls="v-pills-userinfo" aria-selected="false"><img src="/images/account/icoin/TaiKhoan.png" alt="" width="25px" height="25px">&nbsp;&nbsp;Tài khoản của tôi</a>
+                            <a class="nav-link active" id="v-pills-purchaseOrder-tab" data-toggle="pill" href="#v-pills-purchaseOrder" role="tab" aria-controls="v-pills-purchaseOrder" aria-selected="true"><img src="/images/account/icoin/DonMua.png" alt="" width="25px" height="25px">&nbsp;&nbsp;Đơn mua</a>
+                            <a class="nav-link" id="v-pills-notifications-tab" data-toggle="pill" href="#v-pills-notificationst" role="tab" aria-controls="v-pills-notifications" aria-selected="false"><img src="/images/account/icoin/ThongBao.png" alt="" width="25px" height="25px">&nbsp;&nbsp;Thông báo</a>
+                            <a class="nav-link" id="v-pills-voucher-tab" data-toggle="pill" href="#v-pills-voucher" role="tab" aria-controls="v-pills-voucher" aria-selected="false"><img src="/images/account/icoin/Voucher.png" alt="" width="25px" height="25px">&nbsp;&nbsp;Kho Voucher</a>
+                            <a class="nav-link" id="v-pills-coin-tab" data-toggle="pill" href="#v-pills-coin" role="tab" aria-controls="v-pills-coin" aria-selected="false"><img src="/images/account/icoin/ShopXu.png" alt="" width="25px" height="25px">&nbsp;&nbsp;&nbsp;Shop Xu</a>
+                        </div>
+                    </div>
+                    <div class="content col-md-9">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade" id="v-pills-userinfo" role="tabpanel" aria-labelledby="v-pills-userinfo-tab">
+                                <div class="userinfo-wrap">
+                                    <div class="nav-userinfo">
+                                        <h1 class="userinfo-h1">Hồ sơ của tôi</h1>
+                                        <div class="userinfo-sub">Quản lý thông tin hồ sơ tài khoản</div>
+                                    </div>
+                                    <div class="user-form">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="wrapper">
+                                                        <form>
+                                                            <div class="form">
+                                                                <div class="inputfield">
+                                                                   <label>Tên đăng nhập</label>
+                                                                   <input type="text" class="input" id="TenDangNhap" disabled>
+                                                                </div>  
+                                                                 <div class="inputfield">
+                                                                   <label>Họ và tên</label>
+                                                                   <input type="text" class="input" id="HoTen" disabled="true">
+                                                                </div>  
+                                                                 <div class="inputfield">
+                                                                   <label>Giới tính</label>
+                                                                   <div class="custom_select">
+                                                                     <select class="input" disabled="true" id="GioiTinh">
+                                                                       <option value="">Chọn</option>
+                                                                       <option value="male">Nam</option>
+                                                                       <option value="female">Nữ</option>
+                                                                       <option value="other">Khác</option>
+                                                                     </select>
+                                                                   </div>
+                                                                </div> 
+                                                                 <div class="inputfield">
+                                                                   <label>Email</label>
+                                                                   <input type="text" class="input" id="email" disabled="true">
+                                                                </div> 
+                                                               <div class="inputfield">
+                                                                   <label>Số điện thoại</label>
+                                                                   <input type="number" class="input" id="sdt" disabled="true">
+                                                                </div> 
+                                                               <div class="inputfield">
+                                                                   <label>Địa chỉ</label>
+                                                                   <textarea class="textarea" id="DiaChi" disabled="true"></textarea>
+                                                                </div>
+                                                               <div class="inputfield">
+                                                                 <input type="button" value="Thay đổi" class=" btn" id="ChangeBtn">
+                                                                 <input type="submit" value="Lưu" class="btn" id="SaveBtn">
+                                                                 <input type="reset" value="Đặt lại" class="btn" id="ResetBtn">
+                                                               </div>
+                                                             </div>
+                                                        </form>
+                                                    </div>	
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active" id="v-pills-purchaseOrder" role="tabpanel" aria-labelledby="v-pills-purchaseOrder-tab">
+                                <div class="navbar-purcharse">
+                                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="pills-all-tab" role="tab" aria-controls="pills-all" aria-selected="true">Tất cả</a>
+                                        </li> 
+                                        <li class="nav-item">
+                                          <a class="nav-link " id="pills-comfirm-tab" role="tab" aria-controls="pills-comfirm" aria-selected="false">Chờ xác nhận</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="pills-get-tab" role="tab" aria-controls="pills-get" aria-selected="false">Chờ lấy hàng</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-delivery-tab" role="tab" aria-controls="pills-delivery" aria-selected="false">Đang giao</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="pills-delivered-tab" role="tab" aria-controls="pills-delivered" aria-selected="false">Đã giao</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-cancelled-tab"  role="tab" aria-controls="pills-cancelled" aria-selected="false">Đã hủy</a>
+                                        </li>
+                                      </ul>
+                                    <!-- <ul class="nav justify-content-center">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" href="http://localhost:3001/account/all-2">Tất cả</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="http://localhost:3001/account/cxn-2">Chờ xác nhận</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="http://localhost:3001/account/clh-2">Chờ lấy hàng</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://localhost:3001/account/dg-2">Đang giao</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://localhost:3001/account/gtc-2">Đã giao</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://localhost:3001/account/hg-2">Đã hủy</a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                                  <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+                                        <% purcharse.forEach((item) => { %>
+                                            <div class="purcharse">
+                                                <table>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="name-store"><%=item.TenCH%></div>
+                                                            <hr>
+                                                        </th>
+                                                    </tr>
+                                                    <% item.SP_moiDH.forEach((item2) => { %>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="cart-info">
+                                                                <img src="<%=item2.Anh%>">
+                                                                <div>
+                                                                    <p><%=item2.TenSP%></p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td><%=item2.GiaBan%></td>
+                                                        <td><%=item2.SoLuong%></td>
+                                                        <td><%=item2.ThanhTien%></td>
+                                                    </tr>
+                                                    <% }) %>
+                                                </table>
+                                                <hr id="footer-purcharse">
+                                                <div class=total-price>
+                                                    <table>
+                                                        <tr>
+                                                            <td>Phí vận chuyển</td>
+                                                            <td><%=item.PhiVC%> vnd</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tổng số tiền</td>
+                                                            <td><%=item.TongTien%> vnd</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-get" role="tabpanel" aria-labelledby="pills-get-tab">
+                                        <div class="emty-area">
+                                            <div class="emty-area-wrap">
+                                                <img src="/images/account/icoin/EmtyPurcharse.png" width="50px" height="50px">
+                                                <div>Chưa có đơn hàng</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-delivery" role="tabpanel" aria-labelledby="pills-delivery-tab">
+                                        <div class="emty-area">
+                                            <div class="emty-area-wrap">
+                                                <img src="/images/account/icoin/EmtyPurcharse.png" width="50px" height="50px">
+                                                <div>Chưa có đơn hàng</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-delivered" role="tabpanel" aria-labelledby="pills-delivered-tab">
+                                        <div class="emty-area">
+                                            <div class="emty-area-wrap">
+                                                <img src="/images/account/icoin/EmtyPurcharse.png" width="50px" height="50px">
+                                                <div>Chưa có đơn hàng</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-cancelled" role="tabpanel" aria-labelledby="pills-cancelled-tab">
+                                        <div class="emty-area">
+                                            <div class="emty-area-wrap">
+                                                <img src="/images/account/icoin/EmtyPurcharse.png" width="50px" height="50px">
+                                                <div>Chưa có đơn hàng</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-notifications" role="tabpanel" aria-labelledby="v-pills-notifications-tab"></div>
+                            <div class="tab-pane fade" id="v-pills-voucher" role="tabpanel" aria-labelledby="v-pills-voucher-tab"></div>
+                            <div class="tab-pane fade" id="v-pills-coin" role="tabpanel" aria-labelledby="v-pills-coin-tab"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!--------- end content----------->
+        
+        <!--------- footer ----------->
+        <%- include('../layout/footer.ejs'); %>
+        
+    </div><!--------- end container ----------->
+    
+    <!-- javascript -->
+    <script src="/javascripts/account/script.js"></script>
+    <script src="/javascripts/layout/header-main/script.js"></script>
+    <script src="/javascripts/layout/footer/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

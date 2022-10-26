@@ -1,0 +1,7 @@
+insert into SanPham_HinhAnh(MaSP, Anh) values (1, N'public\images\products\Imgae1')
+insert into SanPham_HinhAnh(MaSP, Anh) values (2, N'public\images\products\Imgae2')
+insert into SanPham_HinhAnh(MaSP, Anh) values (3, N'public\images\products\Imgae3')
+insert into SanPham_HinhAnh(MaSP, Anh) values (4, N'public\images\products\Imgae4')
+insert into SanPham_HinhAnh(MaSP, Anh) values (5, N'public\images\products\Imgae5')
+insert into SanPham_HinhAnh(MaSP, Anh) values (6, N'public\images\products\Imgae6')
+insert into SanPham_HinhAnh(MaSP, Anh) values (7, N'public\images\products\Imgae7')

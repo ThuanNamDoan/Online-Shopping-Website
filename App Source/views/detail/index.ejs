@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Detail</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/detail/style.css">
+    <link rel="stylesheet" href="/stylesheets/detail/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/detail/dropdown.css">
+    <link rel="stylesheet" href="/stylesheets/layout/header-main/style.css">
+    <link rel="stylesheet" href="/stylesheets/layout/footer/style.css">
+    
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!--------- header ----------->
+    <div class="container-fuild">
+        <%- include('../layout/header-main.ejs'); %>
+    </div>
+    <!--------- end header ----------->
+
+    <!--------- content----------->
+    <div id="content" class="container-fuild">
+         <!--------- content----------->
+         <div class='content'>
+
+            <!--product container -->
+            <div class="product-container">
+                <div class="row">
+                    <!-- img product container -->
+                    <div class="col-sm-5 product-img-container">
+                        <!-- img container (hình to)-->
+                        <div id="carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+
+                                <% if (details.Anh.length == 0) { %>
+                                    <div class="item active">
+                                        <img src="/images/products/empty.png">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="/images/products/empty.png">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="/images/products/empty.png">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="/images/products/empty.png">
+                                    </div>
+                                <%} else { %>
+                                    <div class="item active">
+                                        <img src="<%=details.Anh[0]%>">
+                                    </div>
+                                    
+                                    <% for (var i = 1; i < details.Anh.length;  i++ ) { %>
+                                        <div class="item">
+                                            <img src="<%=details.Anh[i]%>">
+                                        </div>
+                                    <% } %>
+                                <% } %>
+                                
+                            </div>
+                        </div> 
+                        
+                        <!-- thumail img container (hình nhỏ) -->
+                        <div class="clearfix">
+                            <div id="thumbcarousel" class="carousel slide" data-interval="false">
+                                <div class="carousel-inner">
+                                    <% if (details.Anh.length == 0) { %>
+                                        <div class="item active">
+                                            <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="/images/products/empty.png"></div>
+                                            <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="/images/products/empty.png"></div>
+                                            <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="/images/products/empty.png"></div>
+                                            <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="/images/products/empty.png"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div data-target="#carousel" data-slide-to="4" class="thumb"><img src="/images/products/empty.png"></div>
+                                            <div data-target="#carousel" data-slide-to="5" class="thumb"><img src="/images/products/empty.png"></div>
+                                            <div data-target="#carousel" data-slide-to="6" class="thumb"><img src="/images/products/empty.png"></div>
+                                            <div data-target="#carousel" data-slide-to="7" class="thumb"><img src="/images/products/empty.png"></div>
+                                        </div>
+                                    <%} else { %>
+                                        <div class="item active">
+                                            <% for (var i = 0; i < details.Anh.length;  i++ ) { %>
+                                                <div data-target="#carousel" data-slide-to="<%=i%>" class="thumb"><img src="<%=details.Anh[i]%>"></div>
+                                            <% } %>
+                                        </div>
+
+                                        <div class="item">
+                                            <% for (var i = 0; i < details.Anh.length;  i++ ) { %>
+                                                <div data-target="#carousel" data-slide-to="<%=i%>" class="thumb"><img src="<%=details.Anh[i]%>"></div>
+                                            <% } %>
+                                        </div>
+                                    <% } %>  
+                                </div>
+                                <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>  <!-- end img product container -->
+
+                    <!-- product detail container -->
+                    <div class="col-sm-7 product-detail-container">
+                        <p class='product-title'><%=details.TenSP%></p>
+                        <div>
+                            <div class='evaluate-star-container align-self-center'>
+                                <div class='star-number-container'>
+                                    <span class='star-number'><%=details.SoSaoTB%></span>
+                                </div>
+
+                                <% for (var i = 1; i <= (details.SoSaoTB + 0.5);  i++ ) { %>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                    </svg>
+                                <% } %>
+                                
+                                <% for (var i = 1; i <= (5 - details.SoSaoTB + 0.5);  i++ ) { %>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                                    </svg>
+                                <% } %>
+                                
+                            </div>
+                            <span>&nbsp;&nbsp;</span>
+                            <div class='dist'>&nbsp;&nbsp;</div>
+                            <div class='evaluate-num-container align-self-center'>
+                                <span class='evaluate-num'><%=details.SoDanhGia%></span>
+                                Đánh Giá 
+                            </div>
+                            <span>&nbsp;&nbsp;</span>
+                            <span class='dist'>&nbsp;&nbsp;</span>
+                            <div class='sold-container'>
+                                <span class='sold-num'><%=details.SoLuongTon%></span>
+                                Sản Phẩm
+                            </div>
+                            <span>&nbsp;&nbsp;</span>
+                            <span class='dist'>&nbsp;&nbsp;</span>
+                            <div class='sold-container'>
+                                <span class='sold-num' id="id-product"><%=details.MaSP%></span>
+                                Mã Sản Phẩm
+                            </div>
+                        </div>
+
+                        <!--price container -->
+                        <div class='price-container'>
+                            <div class='row align-items-center'>
+                                <span class='price-before'><%=details.GiaBan/1000%>.000 đ</span>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class='price-current'><%=(details.GiaBan- details.GiaGiam)/1000%>.000 đ</span>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <div class='percent-discount-container'>
+                                    <span class='percent-discount'><%=details.TiLeGiam%>% </span> Giảm
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- voucher container -->
+                        <div class='field-container'>
+                            <div class='row ml-0'>
+                                <div class='col-md-2 p-0'>
+                                    <div class='field-title'>Mã Giảm Giá<br>Của Shop</div>
+                                </div>
+                            
+                                <div class='col-md-10 field-list-container'>
+                                    <div class="dropdown">
+                                        <!--voucher list -->
+                                        <div class='dropbtn parent'>
+                                            <!-- khi thêm voucher ở trường Mã Giảm Giá Của Shop thì thêm element <div class='voucher-item-container'> này -->
+                                            
+                                            <% details.KMCH.forEach((item) => { %>
+                                                <div class='voucher-item-container'>
+                                                    <% if (item.LoaiKM != 'GTPT') { %>
+                                                        Giảm <%=item.GTGiam%>đ
+                                                    <%} else { %>
+                                                        Giảm <%=item.GTGiam%>%
+                                                    <% } %>
+                                                </div>
+                                            <% }) %>
+                                            
+                                        </div>
+                                        <!-- dropdown content voucher list-->
+                                        <div class="dropdown-content">
+                                            <div class='dropdown-content-title-container'>
+                                                <span class='dropdown-content-title'>Mã giảm giá của Shop</span> <br>
+                                                <span class='dropdown-content-subtitle'>Tiết kiệm hơn khi áp dụng mã giảm giá của Shop</span>
+                                            </div>                                        
+                                            <!-- item div (khi thêm khuyến mãi trong dropdown thì thêm element <div class='item-discount'> này )-->
+                                            <% details.KMCH.forEach((item) => { %>
+                                            <div class='item-discount'>
+                                                <div class='row no-gutters item-discount-container zigzag'>
+                                                    <div class='col-md-4 col-sm-3 col-3' style='text-align: center;'>
+                                                        <div class='item-discount-side-container'>
+                                                            <!--img discount--> 
+                                                            <img class='img-fluid discount-img' src="/images/detail/voucher.png">
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-md-8 col-sm-9 col-9 align-self-center pl-2 item-discount-main-container'>
+                                                        <% if (item.LoaiKM == 'PTTT') { %>
+                                                        <div>
+                                                            <!--<span class='discount-title'>Sale: </span>-->
+                                                                <span class='discount-id' id='discount-id'>Phương Thức Thanh Toán</span>
+                                                        </div>
+                                                        <div class='discount-title' id='discount-amount'>Giảm <%=item.GTGiam%>đ</div>
+                                                        <div class='discount-subtitle'>Cho đơn từ <%=item.GTAD%>đ</div>
+                                                        <div class='discount-subtitle'>Số lượng: <%=item.SoLuong%></div>
+                                                        <% } %>
+
+                                                        <% if (item.LoaiKM == 'GTPT') { %>
+                                                        <div>
+                                                            <!--<span class='discount-title'>Sale: </span>-->
+                                                                <span class='discount-id' id='discount-id'>Giá Trị Đơn Hàng</span>
+                                                        </div>
+                                                        <div class='discount-title' id='discount-amount'>Giảm <%=item.GTGiam%>%</div>
+                                                        <div class='discount-subtitle'>Cho đơn từ <%=item.GTAD%>đ</div>
+                                                        <div class='discount-subtitle'>Số lượng: <%=item.SoLuong%></div>
+                                                        <% } %>
+
+                                                        <% if (item.LoaiKM == 'VC') { %>
+                                                        <div>
+                                                            <!--<span class='discount-title'>Sale: </span>-->
+                                                                <span class='discount-id' id='discount-id'>Miễn Phí Vận Chuyển</span>
+                                                        </div>
+                                                        <div class='discount-title' id='discount-amount'>Giảm <%=item.GTGiam%>đ</div>
+                                                        <div class='discount-subtitle'>Cho đơn từ <%=item.GTAD%>đ</div>
+                                                        <div class='discount-subtitle'>Số lượng: <%=item.SoLuong%></div>
+                                                        <% } %>
+
+                                                        <% if (item.LoaiKM == 'GTDH') { %>
+                                                        <div>
+                                                            <!--<span class='discount-title'>Sale: </span>-->
+                                                                <span class='discount-id' id='discount-id'>Giá Trị Đơn Hàng</span>
+                                                        </div>
+                                                        <div class='discount-title' id='discount-amount'>Giảm <%=item.GTGiam%>đ</div>
+                                                        <div class='discount-subtitle'>Cho đơn từ <%=item.GTAD%>đ</div>
+                                                        <div class='discount-subtitle'>Số lượng: <%=item.SoLuong%></div>
+                                                        <% } %>
+
+                                                    </div>
+                                                </div>
+                                            </div>  <!-- end item -->
+                                            <% }) %>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Vận chuyển -->
+                        <div class='field-container' >
+                            <div class='row ml-0'>
+                                <div class='col-md-2 p-0'>
+                                    <div class='field-title'>Vận chuyển</div>
+                                </div>
+                                <div class='col-md-10'>                                
+                                    <div class='item-container'>
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1cdd37339544d858f4d0ade5723cd477.png" width="25" height="15" class="_2geN66">
+                                        Miễn phí vận chuyển khi áp dụng Mã khuyến mãi
+                                    </div >
+                                    <div class='item-container'>
+                                        <div class='row'>
+                                            <div class='col-md-1'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16" style='margin-top: -5px;margin-left: 3px'>
+                                                    <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                                </svg>
+                                            </div>
+                                            <div class='col-md-11 p-0' style='display:flex'>
+                                                <span class='field-title'>Vận chuyển từ &nbsp;&nbsp;</span>
+                                                <span> TPHCM</span>
+                                                <span class='field-title'>&nbsp; tới &nbsp;</span>
+                                                <div class="dropdown">
+                                                    <button class="dropdown-toggle" type="button" id="dropdown-shipping" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Chọn vị trí
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdown-shipping">
+                                                        <span class="dropdown-item">Cùng quận</span>
+                                                        <span class="dropdown-item">Khác quận</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                    <div class='item-container'>
+                                        <div class='row'>
+                                            <div class='col-md-1'></div>
+                                            <div class='col-md-11 pl-0'>
+                                                <span>Phí vận chuyển &nbsp;</span>
+                                                <span id='shipping-price'>25.000đ</span>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                                               
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Màu sắc -->
+                        <% if (details.Mau.length > 0) { %>
+                            <div class='field-container' id='select-field-container'>
+                                <div class='row ml-0'>
+                                    <div class='field-title-container col-md-2 p-0'>
+                                        <div class='field-title'>Màu sắc</div>
+                                    </div>
+                                    <div class='col-md-10 field-list-container parent' id='select-container'> 
+                                        
+                                        <% details.Mau.forEach((item) => { %>
+                                            <div class='field-btn-container'><%=item%></div>
+                                        <% }) %>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        
+                        <!-- Kích thước  -->
+                        <% if (details.KichThuoc.length > 0) { %>
+                            <div class='field-container' id='select-field-container'>
+                                <div class='row ml-0'>
+                                    <div class='field-title-container col-md-2 p-0'>
+                                        <div class='field-title'>Kích thước</div>
+                                    </div>
+                                    <div class='col-md-10 field-list-container parent' id='select-container'>
+    
+                                        <% details.KichThuoc.forEach((item) => { %>
+                                            <div class='field-btn-container'><%=item%></div>
+                                        <% }) %>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        
+
+                        <!-- Phân loại  -->
+                        <% if (details.DongSP.length > 0) { %>
+                            <div class='field-container' id='select-field-container'>
+                                <div class='row ml-0'>
+                                    <div class='field-title-container col-md-2 p-0'>
+                                        <div class='field-title'>Dòng sản phẩm</div>
+                                    </div>
+                                    <div class='col-md-10 field-list-container parent' id='select-container'> 
+                                        <% details.DongSP.forEach((item) => { %>
+                                            <div class='field-btn-container'><%=item%></div>
+                                        <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <!-- Sớ lượng  -->
+                        <div class='field-container'>
+                            <div class='row ml-0'>
+                                <div class='field-title-container col-md-2 p-0'>
+                                    <div class='field-title'>Số lượng</div>
+                                </div>
+                                <div class='col-md-10 field-list-container parent' id='select-container'> 
+                                    <input type="number" id="input-quantity" style='float: left' name="quantity" min="1" value="1" >
+                                    <div class='amount-container'>
+                                        <span id='product-quantity'><%=details.SoLuongTon%></span>
+                                        <span>&nbsp;sản phẩm có sẵn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- button -->
+                        <div class='field-list-container parent' style='margin-top: 30px'>
+                            <div class='btn-container btn-select' id='btn-1'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                    <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                </svg>
+                                <span>&nbsp;&nbsp;Thêm vào giỏ hàng</span>
+                            </div>
+
+                            <div class='btn-container btn-select' id='btn-2'>
+                                Mua ngay
+                            </div>
+                            
+                        </div>
+                        
+                    </div> <!-- end product detail container -->
+                </div> <!-- end row -->
+            </div> <!-- end product container -->
+
+            
+            <!-- shop info container -->
+            <div class='shop-info-containter'>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <div class='shop-side'>
+                            <img src="/images/detail/store-logo.png">
+                            <div class='store-name'>
+                                <span><%=details.TenCH%></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-6'>
+                        <div class='shop-side-right-container'>
+                            <div class='shop-side-right-field-container'>
+                                <p class='shop-side-right-field-title'>Sản phẩm</p>
+                                <p class='shop-side-right-field-content'><%=details.SoSP%></p>
+                            </div>
+                            
+                            <div class='shop-side-right-field-container'>
+                                <p class='shop-side-right-field-title'>Tên người bán</p>
+                                <p class='shop-side-right-field-content'><%=details.TenNB%></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- product info container-->
+            <div class='product-info-container'>
+                <div class='product-info-title-container'>
+                    CHI TIẾT SẢN PHẨM
+                </div>
+                <div class='product-info-content-container'>
+                    <div class='field-container'>
+                        <div class='row'>
+                            <div class='col-md-2 field-title'>
+                                Danh mục
+                            </div>
+                            <div class='col-md-10'>
+                                <%=details.TenDM%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='field-container'>
+                        <div class='row'>
+                            <div class='col-md-2 field-title'>
+                                Loại hàng
+                            </div>
+                            <div class='col-md-10'>
+                                <%=details.TenLH%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='field-container'>
+                        <div class='row'>
+                            <div class='col-md-2 field-title'>     
+                                Liên hệ
+                            </div>
+                            <div class='col-md-10'>
+                                <%=details.SDT%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='field-container'>
+                        <div class='row'>
+                            <div class='col-md-2 field-title'></div>
+                            <div class='col-md-10'>
+                                <%=details.Email%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='field-container'>
+                        <div class='row'>
+                            <div class='col-md-2 field-title'>
+                                Gửi từ
+                            </div>
+                            <div class='col-md-10'>
+                                TP. Hồ Chí Minh
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='product-info-title-container' style='margin-top: 50px;'>
+                    MÔ TẢ SẢN PHẨM
+                </div>
+                <div class='product-disc'>
+                    <%=details.MoTa%>
+                </div>
+            </div> <!-- end product info container-->
+
+            <!-- product đánh giá -->
+            <div class='product-evaluate-containter'>
+                <div style='background-color: white; font-size: 19px; color:#575555;'>
+                    ĐÁNH GIÁ SẢN PHẨM
+                </div>
+                <div class='product-evaluate-content-container'>
+                    <div class='row'>
+                        <div class='col-md-12'>
+                            <div class='star-content-container'>
+                                <span class='star-num'><%=details.SoSaoTB%></span>
+                                <span>&nbsp;trên 5</span>
+                                <div>
+
+                                    <% for (var i = 1; i <= (details.SoSaoTB + 0.5);  i++ ) { %>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                    <% } %>
+                                    
+                                    <% for (var i = 1; i <= (5 - details.SoSaoTB + 0.5);  i++ ) { %>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                                        </svg>
+                                    <% } %>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div> <!--------- end content----------->
+    
+    </div> 
+    <!--------- end content----------->
+
+
+    <!-- Message Modal -->
+    <div class="modal fade" id="MessageModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Thông báo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <span class='modal-body-content'>Bạn đã chọn Voucher. Bạn có đồng ý thay đổi Voucher mới không?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <!--------- footer ----------->
+    <div>
+        <%- include('../layout/footer.ejs'); %>
+    </div>
+
+    <!--------- end footer ----------->
+
+    
+
+    <!-- javascript -->
+    <script src="/javascripts/detail/script.js"></script>
+    <script src="/javascripts/layout/header-main/script.js"></script>
+    <script src="/javascripts/layout/footer/script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

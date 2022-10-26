@@ -1,0 +1,117 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/*  ------------------------- header -------------------------- */
+.header {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0 0%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    height: 130px;
+}
+
+.header-account {
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.2vw;
+    padding-right: 5%;
+    color: white;
+    padding-bottom: 0;
+    background-color: #fa5838;
+}
+
+/* header-account drop down */
+.header-account .dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.header-account .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 999;
+}
+
+.header-account .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    border-radius: 5px;
+    text-align: start;
+    font-size: 13px;
+}
+
+.header-account .dropdown-content a {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.header-account .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #00b33c !important;
+}
+
+.header-account .dropdown:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    right: 100%;
+    top: 30px;
+    margin-right: -40px;
+}
+
+#signin-signup {
+    position:relative;
+    visibility: visible;
+}
+
+#account {
+    position:absolute;
+    top: 0;
+    padding:0;
+}
+
+/*logo*/
+.img-logo {
+    width: auto;
+    height: 80px;
+    filter: invert(48%) sepia(53%) saturate(2946%) hue-rotate(336deg) brightness(96%) contrast(103%);
+}
+
+
+.signin-signup {
+    display: inline;
+}
+
+.signin-signup a {
+    color: white !important;
+}
+
+#account .img-user {
+    width: 7%;
+    height: auto;
+}
+
+#account .user-name {
+    font-size: 14px;
+    padding-top: 3px;
+    padding-left: 0px;
+}

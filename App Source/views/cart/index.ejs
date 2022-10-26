@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Cart</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/cart/modal.css">
+    <link rel="stylesheet" href="/stylesheets/cart/saw-border.css">
+    <link rel="stylesheet" href="/stylesheets/cart/style.css">
+    <link rel="stylesheet" href="/stylesheets/layout/header-sub/style.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--------- container ----------->
+    <div class="container-fuild">
+        <!--------- content----------->
+        <%- include('../layout/header-sub.ejs'); %>
+        
+        <!--------- content----------->
+        <div class='content'>
+            <div class='content-container row'>
+                <div class='col-md-9 main-container'>
+                    <div class='main'>
+                        <div class='main-header row align-items-center'>
+                            <div class='col-md-4'>
+                                <span>Sản phẩm</span>
+                            </div>
+                            <div class='col-md-3'>
+                                <span>Đơn giá</span>
+                            </div>
+                            <div class='col-md-2'>
+                                <span>Số lượng</span>
+                            </div>
+                            <div class='col-md-2'>
+                                <span>Số tiền</span>
+                            </div>
+                            <div class='col-md-1' style='padding:0;'>
+                                <span>Thao tác</span>
+                            </div>
+                        </div>
+                        <div class='main-content' id='main-content'>
+                            <!-- Shop container -->
+                            <!-- Chỗ này xử lý trong local Storage-->
+                        </div> <!-- end main content -->
+                    </div>
+                </div>
+
+                <!-- giao hang container -->
+                <div class='col-md-3 side-container'>
+                    <!-- item 1 -->
+                    <div class='side-item-container'>
+                        <div class='side-item-header'>
+                            <span class='side-header-title'>Giao hàng</span>
+                            <span class='side-header-subtitle' id='btn-change'>Thay đổi</span>
+                        </div>
+                        <div class='side-item-main'>
+                            <div>
+                                <span style='display:inline' id='user-name'></span>
+                                <span style='display:inline'>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>                      
+                                <span style='display:inline' id='user-phone'></span> 
+                            </div> 
+                            <span style='font-size: 13px; color:rgb(126, 126, 126)' id='text-adress'></span>
+                        </div>
+                    </div>
+
+                    <!-- item 2 -->
+                    <div class='side-item-container'>
+                        <div class='side-item-header'>
+                            <span class='side-header-title'>Shop Khuyến mãi</span>
+                        </div>
+                        <div class='side-item-main'>
+                            <img src="https://frontend.tikicdn.com/_desktop-next/static/img/mycoupon/coupon_icon.svg">
+                            <span class='select-voucher' data-toggle="modal" data-target="#DiscountModal2" id='btn-select-discount1'>&nbsp;&nbsp;Chọn mã khuyến mãi</span>
+                        </div>
+                        <div id='select-item-container'>
+                            <div id='discount-select-title' class='discount-select-title'></div>
+                            <div class='discount-select-container align-items-center'>
+                                <div>
+                                    <span class='discount-select-ID' id='discount-select-ID' ></span>
+                                    <span id='discount-select-amount' style='display:inline'></span>
+                                    <div id='btn-select-cancel-container' >
+                                        <button class='btn btn-cancel' id='btn-select-cancel'>Bỏ chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item 3 -->
+                    <div class='side-item-container'>
+                        <div class='side-item-main'>
+                            <div class='side-item-field'>
+                                <span class='side-item-title1'>Tạm tính</span>
+                                <span class='side-item-title2' id='provisional-price'></span>
+                            </div>
+                            <div class='side-item-field'>
+                                <span class='side-item-title1'>Khuyến mãi</span>
+                                <span class='side-item-title2' id='voucher-amount-selected'>0đ</span>
+                            </div>
+                            <hr>
+                            <div class='side-item-field'>
+                                <span class='side-item-finaltitle1'>Tổng cộng</span>
+                                <span class='side-item-finaltitle2'><span id='total-price'></span>đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="button" style='width: 100%;'class="btn btn-submit" id='btn-buy'>Mua hàng</button>
+                    </div>
+                </div> <!-- end side container -->
+            </div>
+            
+        </div> <!--------- end content ----------->
+
+        
+        <!--------- footer ----------->
+        <%- include('../layout/footer.ejs'); %>
+        
+    </div><!--------- end container ----------->
+
+    <!--------- Dicount Modal 1 ---------->
+    <div class="modal fade" id="DiscountModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title"><span id='modal1-storeName'></span>&nbsp;khuyến mãi</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body" id='modal1-body' style='padding: 5% 0% 1% 0%'>
+                <!-- xử lý trong localStorage -->
+                <!-- item -->
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" data-dismiss="modal" style='font-size:13px;'>Đóng</button>
+            </div>
+        </div>
+        </div>
+    </div>  <!--------- end Dicount Modal 1 ---------->
+
+    <!--------- Dicount Modal 2 ---------->
+    <div class="modal fade" id="DiscountModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Shop khuyến mãi</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body" style='padding: 5% 0% 1% 0%'>
+                <!-- item -->
+                <% discount.forEach((item) => { %>
+                <div class='item-discount'>
+                    <div class='row no-gutters item-discount-container zigzag'>
+                        <div class='col-md-3 col-sm-2 col-2' style='text-align: center;'>
+                            <div class='item-discount-side-container'>
+                                <!--img discount--> 
+                                <img class='img-fluid discount-img' src="/images/cart/voucher.png">
+                            </div>
+                        </div>
+                        <div class='col-md-6 col-sm-7 col-7 align-self-center pl-2 item-discount-main-container'>
+                            <div>
+                                <span class='discount-title'>Mã Voucher: </span>
+                                <span class='discount-id' id='discount-id'><%=item.MaKMHT%></span>
+                            </div>
+
+                            <% if(item.LoaiKM == 'PTTT') { %>
+                            <div class='discount-title' id='discount-amount'>Giảm giá <%=item.GTGiam%>K</div>
+                            <% } else { %>
+                            <div class='discount-title' id='discount-amount'>Giảm phí vận chuyển <%=item.GTGiam%>K</div>
+                            <% } %>
+
+                            <div class='discount-subtitle'>Cho đơn từ <%=item.GTAD%>K</div>
+                            <div class='discount-subtitle'>HSD: <%=item.NgayKT%></div>
+                        </div>
+                        <div class='col-md-3 col-sm-3 col-3 align-self-end btn-select'>
+                            <button type="button" style='width: 70%;'class="btn btn-submit" id='btn-discount' onclick="selectDiscountSystem(this, `<%=item.LoaiKM%>`, `<%=item.GTGiam%>`)">Áp dụng</button>
+                        </div>
+                    </div>
+                </div>  <!-- end item -->
+                <% }) %>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" data-dismiss="modal" style='font-size:13px;'>Đóng</button>
+            </div>
+        </div>
+        </div>
+    </div>  <!--------- end Dicount Modal 2 ---------->
+    
+    <!-- Message Modal -->
+    <div class="modal fade" id="MessageModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Thông báo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <span class='modal-body-content'>Bạn đã chọn Voucher. Bạn có đồng ý thay đổi Voucher mới không?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" data-dismiss="modal" id='btn-nonaccept-change'>Đóng</button>
+                <button type="button" class="btn btn-submit" id='btn-accept-change'>Đồng ý</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Change Adress Modal -->
+    <div class="modal fade" id="ChangeAdressModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style='padding-left:25%'>Thay đổi địa chỉ giao hàng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="InputName">Họ và tên</label>
+                        <input type="text" class="form-control" id="InputName" placeholder="Nhập họ và tên">
+                        <span class='check-input' id='checkName'>Nhập sai</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputPhone">Số điện thoại</label>
+                        <input type="tel" class="form-control" id="InputPhone" placeholder="Nhập số điện thoại">
+                        <span class='check-input' id='checkPhone'>Nhập sai</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputDistrict">Quận/Huyện</label>
+                        <select class="custom-select" id="InputDistrict">
+                            <option >Chọn Quận/Huyện</option>
+                            <option class = 'option-district' value="1">Quận 1</option>
+                            <option value="2" class = 'option-district'>Quận 2</option>
+                            <option value="3">Quận 3</option>
+                            <option value="4">Quận 4</option>
+                            <option value="5">Quận 5</option>
+                            <option value="6">Quận 6</option>
+                            <option value="7">Quận 7</option>
+                            <option value="8">Quận 8</option>
+                            <option value="9">Quận 9</option>
+                            <option value="10">Quận 10</option>
+                            <option value="11">Quận 11</option>
+                            <option value="12">Quận 12</option>
+                            <option value="13">Quận Bình Thành</option>
+                            <option value="14">Quận Gò Vấp</option>
+                            <option value="15">Quận Thủ Đức</option>
+                            <option value="16">Quận Bình Tân</option>
+                            <option value="17">Quận Tân Phú</option>
+                            <option value="18">Quận Tân Bình</option>
+                            <option value="19">Quận Phú Nhuận</option>
+                            <option value="20">Huyện Củ Chi</option>
+                            <option value="21">Huyện Hóc Môn</option>
+                            <option value="22">Huyện Bình Chánh</option>
+                            <option value="23">Huyện Nhà Bè</option>
+                            <option value="24">Huyện Cần Giờ</option>
+                        </select>
+                        <span class='check-input' id='checkDistrict'>Nhập sai</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputWard">Phường/Xã</label>
+                        <select class="custom-select" id="InputWard">
+                            <option selected>Chọn Phường/Xã</option>
+                        </select>
+                        <span class='check-input' id='checkWard'>Nhập sai</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputAdress">Địa chỉ</label>
+                        <input type="text" class="form-control" id="InputAdress" placeholder="Ví dụ: 52, đường Trần Hưng Đạo">
+                        <span class='check-input' id='checkAdress'>Nhập sai</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" id='btn-nonaccept-change-adress'>Xóa</button>
+                <button type="button" class="btn btn-submit" id='btn-accept-change-adress'>Lưu</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- javascript -->
+    <script type="text/javascript" src="/javascripts/cart/script.js"></script>
+    <script type="text/javascript" src="/javascripts/cart/localStorage.js"></script>
+    <script src="/javascripts/layout/header-sub/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

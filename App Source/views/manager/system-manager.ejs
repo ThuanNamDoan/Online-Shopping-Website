@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop | Manager</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/javascripts/manager/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="/stylesheets/manager/sb-admin-2.min.css">
+    <link rel="stylesheet" href="/stylesheets/manager/mycss.css">
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <%- include('../layout/side-bar-manager.ejs'); %>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <%- include('../layout/top-bar-manager.ejs'); %>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Số lượng cửa hàng</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">50621</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-store fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-0">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Số lượng khách hàng</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">215000</div>
+                                        </div>
+                                        <div class="col-auto" style='margin-right: -5px;'>
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Số lượng mặt hàng
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">215000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-tshirt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Số lượng đơn hàng</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">60431</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Thống kê các cửa hàng có doanh thu cao nhất -->
+                        <div class="card shadow mb-4" style='width: 495px;'>
+                            <div class="card-header py-3">
+                                <div class="row">
+                                    <div class='col-md-9 align-self-center'>
+                                        <h6 class="m-0 font-weight-bold text-primary" >Thống kê cửa hàng có doanh thu cao nhất</h6>
+                                    </div>
+                                    <div class='col-md-3' style='padding: 0;'>
+                                        <div class="dropdown" id='chart-select'>
+                                            <button class="btn dropdown-toggle dropdownMenuButton" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Ngày hôm nay
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <span class="dropdown-item" id='dropdown-item1'>Ngày hôm nay</span>
+                                                <span class="dropdown-item" id='dropdown-item1'>Tháng này</span>
+                                                <span class="dropdown-item" id='dropdown-item1'>Năm nay</span>
+                                                <span class="dropdown-item" id='dropdown-item1'>Từ trước đến nay</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" style='padding: 0px;'>
+                                <div class="chart-bar" style='width: 100%;' id='chart-container1'>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Thống kê các sản phẩm bán chạy nhất -->
+                        <div class="card shadow mb-4 ml-4" style='width: 490px;'>
+                            <div class="card-header py-3">
+                                <div class="row">
+                                    <div class='col-md-9 align-self-center'>
+                                        <h6 class="m-0 font-weight-bold" style='color:#33b1c4'>Thống kê các sản phẩm bán chạy nhất</h6>
+                                    </div>
+                                    <div class='col-md-3' style='padding: 0;'>
+                                        <div class="dropdown" id='chart-select'>
+                                            <button class="btn dropdown-toggle dropdownMenuButton" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Ngày hôm nay
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                <span class="dropdown-item" id='dropdown-item2'>Ngày hôm nay</span>
+                                                <span class="dropdown-item" id='dropdown-item2'>Tháng này</span>
+                                                <span class="dropdown-item" id='dropdown-item2'>Năm nay</span>
+                                                <span class="dropdown-item" id='dropdown-item2'>Từ trước đến nay</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" style='padding: 0px; '>
+                                <div class="chart-bar" style='width: 100%;' id='chart-container2'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+                        
+                        <!-- Thống kê đơn hàng -->
+                            <div class="card shadow mb-4" style="width: 1010px">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class='col-md-10 align-self-center'>
+                                        <h6 class="m-0 font-weight-bold" style='color:#d79e0f'>Thống kê số lượng đơn hàng của hệ thống</h6>
+                                    </div>
+                                    <div class='col-md-2' style='padding: 0;'>
+                                        <div class="dropdown" id='chart-select'>
+                                            <button class="btn dropdown-toggle dropdownMenuButton" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Tháng này
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                                <!-- <span class="dropdown-item" id='dropdown-item3'>Ngày hôm nay</span> -->
+                                                <span class="dropdown-item" id='dropdown-item3'>Tháng này</span>
+                                                <span class="dropdown-item" id='dropdown-item3'>Năm nay</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area" id='chart-container3'>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white" style="margin-top: 50px">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Shop &copy; Trang thương mại điện tử</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/javascripts/manager/vendor/jquery/jquery.min.js"></script>    
+    <script src="/javascripts/manager/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/javascripts/manager/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/javascripts/manager/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/javascripts/manager/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts 
+    <script src="/javascripts/manager/js/demo/chart-area-demo.js"></script>
+    <script src="/javascripts/manager/js/demo/chart-pie-demo.js"></script>-->
+    <script src="/javascripts/manager/system-manager/thong-ke-doanh-thu-cua-hang.js"></script>
+    <script src="/javascripts/manager/system-manager/thong-ke-san-pham-ban-chay-nhat.js"></script>
+    <script src="/javascripts/manager/system-manager/thong-ke-don-hang.js"></script>
+    <script src="/javascripts/manager/system-manager/script.js"></script>
+</body>
+
+</html>

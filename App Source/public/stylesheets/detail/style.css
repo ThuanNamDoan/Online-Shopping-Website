@@ -1,0 +1,381 @@
+html {
+    overflow-x: hidden;
+}
+
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/*  ------------------------ content ------------------------- */
+
+.content {
+    margin: 0 0 0 0;
+    padding: 3% 5% 5% 5%;
+    width: 100%;
+    position: relative;
+    background-color: #F4F4F4;
+}
+
+
+.product-container {
+    background-color: white;
+    margin: 2.5% 1%;
+    padding: 0 1.5% 2.5% 1.5%;
+}
+
+.product-detail-container {
+    padding-top: 2%; 
+    color: rgb(54, 54, 54);
+}
+
+.product-detail-container .product-title {
+    font-size: 20px;
+}
+
+.evaluate-star-container {
+    color: #fa5838;
+    display: inline;
+}
+
+.evaluate-star-container .star-number-container {
+    border-bottom: 1px solid #fa5838;
+    font-size: 15px;
+    margin-right: 1%;
+    display: inline-block;
+    padding-right: 0 !important;
+    padding-left: 3px;
+}
+
+/* số lượt đánh giá */
+.evaluate-num-container {
+    display: inline-block;
+    font-size: 15px;
+    color: #8d8d8d;
+}
+
+.evaluate-num-container .evaluate-num {
+    color: black !important;
+}
+
+
+/* số lượt mua */
+.sold-container {
+    display: inline-block;
+    font-size: 15px;
+    color: #8d8d8d;
+}
+
+.sold-container .sold-num {
+    color: black !important;
+}
+
+.dist {
+    border-left: 1px solid #afafaf;
+    height: 25px;
+    display: inline;
+}
+
+/* price container */
+.price-container {
+    background-color: #F4F4F4;
+    padding: 3% 6%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.price-container .price-before {
+    color: #8d8d8d;
+    font-size: 17px;
+    text-decoration: line-through
+}
+
+.price-container .price-current {
+    color: #fa5838;
+    font-size: 27px;
+}
+
+.percent-discount-container {
+    display: inline-block;
+    color: white;
+    background-color: #fa5838;
+    padding: 0 4px;
+}
+
+
+
+/* field container */
+
+.field-container {
+    margin-bottom: 0%;
+    margin-top: 20px;
+}
+
+.field-title {
+    color: #818181;
+    line-height: 120%;
+    padding: 0;
+    font-size: 14px;
+}
+
+.field-list-container {
+    /*display: flex;*/
+    margin-left: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.item-container {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+
+/*voucher */
+.voucher-item-container {
+    float: left;
+    width: 100px;
+    height: 30px;
+    background-color: #fdd7ce;
+    color: #fa5838;
+    margin: 0px 10px 10px 0px;
+    font-size: 13px;
+    width: 75px !important;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*vận chuyển */
+#dropdown-shipping {
+    padding: 0;
+    border: none;
+    background-color: white;
+}
+
+#dropdown-shipping:hover {
+    color: #fa5838;
+}
+
+.dropdown-menu {
+    z-index: 1 !important;
+    cursor: pointer;
+}
+
+/* màu sắc, kích thước */
+.field-btn-container {
+    margin: 0px 10px 10px 0px;
+    border: 1px solid rgb(185, 185, 185);
+    min-width: 80px;
+    padding: 12px 15px;
+    height: 33px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    float: left;
+}
+
+.field-btn-container:hover {
+    color:#fa5838;
+    border: 1px solid #fa5838;
+}
+
+/*số lượng*/
+#input-quantity {
+    width: 80px;
+    text-align: center;
+    height: 33px;
+}
+
+#input-quantity:focus {
+    border: 2px solid #fa5838 !important;
+    outline: 0;
+}
+
+#input-quantity:hover {
+    color:#fa5838;
+    border: 1px solid #fa5838;
+}
+
+.amount-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    float: left;
+    padding-top: 5px;
+}
+
+/*button */
+.field-list-container .btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 190px;
+    height: 45px;
+    margin-right: 20px;
+    cursor: pointer;
+    float: left;
+}
+
+.field-list-container .btn-container:hover {
+    filter: drop-shadow(0px 0px 3px #fa5838);
+}
+
+#btn-1 {
+    border: 1px solid #fa5838;
+    color: #fa5838;
+    background-color: #feeae6;
+}
+
+#btn-2 {
+    border: 1px solid #fa5838;
+    color: white;
+    background-color: #fa5838;
+}
+
+/* product info */
+.product-info-container {
+    background-color: white;
+    margin: 2.5% 1%;
+    padding: 2% 3%;
+}
+
+.product-info-title-container {
+    background-color: #f8f7f7;
+    padding: 10px 20px;
+    font-size: 19px;
+    color:#575555;
+    margin-bottom: 20px;
+}
+
+.field-container {
+    font-size: 16px;
+}
+
+
+/*đánh giá */
+.product-evaluate-containter {
+    background-color: white;
+    margin: 2.5% 1%;
+    padding: 2% 3%;
+}
+
+.product-evaluate-content-container {
+    margin-top: 20px;
+    background-color: #fcf7f6;
+    padding: 5%;
+}
+
+.product-evaluate-content-container .star-content-container {
+    font-size: 18px;
+    color:#fa5838;
+    text-align: center;
+}
+
+.product-evaluate-content-container .star-content-container .star-num {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.star-detail-container {
+    text-align: center;
+    padding-top: 1%;
+}
+
+.start-item {
+    border: 1px solid #fa5838;
+    background-color: white;
+    padding: 8px 20px;
+    margin-right: 10px;
+}
+
+/*shop info container */
+.shop-info-containter {
+    background-color: white;
+    margin: 2.5% 1%;
+    padding: 2% 3%;
+    height: 120px;
+}
+
+.shop-info-containter .shop-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-info-containter img {
+    width: 17%;
+}
+
+.store-name {
+    font-weight: 700;
+    font-size: 17px;
+    margin-left: 20px;
+    color:rgb(59, 59, 59);
+}
+
+.shop-side-right-container {
+    border-left: 2px solid rgb(236, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20%;
+}
+
+.shop-side-right-field-container {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 20%;
+}
+
+.shop-side-right-field-title {
+    font-size: 16px;
+    color:#818181;
+}
+
+.shop-side-right-field-content {
+    color: #fa5838;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+
+/* ----------- Message Modal ----------- */
+
+#MessageModal .modal-body {
+    padding: 5% 4%;
+}
+
+
+
+.test {
+    background-color: sandybrown;
+}
+
+
+.modal-body {
+    text-align: center;
+    font-size: 15px;
+}
+
+.btn-cancel {
+    background-color:rgb(185, 185, 185) !important;
+    color: white !important;
+}
+
+.btn-cancel:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.parent::after {
+    display: table;
+    clear: both;
+    width: 100%;
+}

@@ -1,0 +1,108 @@
+/*drop down*/
+/* header-account drop down */
+.product-container .dropbtn {
+    padding: 0;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.product-container .dropdown-container {
+    position: relative;
+    display: inline-block;
+    z-index: 999;
+}
+
+.product-container .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    border-radius: 5px;
+    text-align: start;
+    font-size: 13px;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+
+.product-container .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #00b33c !important;
+}
+
+.product-container .dropdown:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    left: 10%;
+    top: 30px;
+}
+
+.product-container .dropdown-content-title-container {
+    text-align: center; 
+    margin-bottom: 3px;
+    line-height: 120%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.product-container .dropdown-content-title-container .dropdown-content-title{
+    color:#5a5a5a; 
+    font-size: 16px;
+}
+
+.product-container .dropdown-content-title-container .dropdown-content-subtitle {
+    color:#a1a1a1;
+}
+
+
+.product-container .zigzag {
+    background: linear-gradient(-137deg, #f7d9bd 6px, transparent 0) 0 5px, linear-gradient(320deg, #fae3cd 5px, #f9f9f9 0) 0 5px;
+    background-color: #faedea;
+    background-position: left bottom;
+    background-repeat: repeat-y;
+    background-size: 10px 10px;
+ }
+
+
+ .product-container .item-discount .item-discount-title1 {
+    font-size: 11px !important;
+}
+
+.product-container .item-discount .item-discount-container {
+    margin: 0% 7% 4% 7%;
+    padding: 3% 0 2% 0; 
+}
+
+
+.product-container .item-discount .discount-title{
+    font-weight: 600;
+    font-size: 11px;
+    color: rgb(66, 65, 65);
+}
+
+.product-container .item-discount .discount-subtitle {
+    font-size: 11px;
+}
+
+.product-container .item-discount .discount-id {
+    color: #fa5838;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.product-container .item-discount .discount-img {
+    width: 65%;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.shopping-bag .dropdown-content {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+

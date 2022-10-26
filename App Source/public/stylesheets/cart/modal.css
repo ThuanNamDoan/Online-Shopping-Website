@@ -1,0 +1,102 @@
+/* ----------- discount modal 1 -----------*/
+#DiscountModal1 .modal-body .item-discount .item-discount-title1 {
+    font-size: 12px !important;
+}
+
+#DiscountModal1 .modal-body .item-discount .item-discount-container {
+    margin: 0% 7% 4% 7%;
+    padding: 3% 0 2% 0; 
+}
+
+#DiscountModal1 .modal-body .item-discount .item-discount-main-container {
+    margin-top: -4%;
+}
+
+#DiscountModal1 .modal-body .item-discount .discount-title{
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#DiscountModal1 .modal-body .item-discount .discount-subtitle {
+    font-size: 13px;
+}
+
+#DiscountModal1 .modal-body .item-discount .discount-id {
+    color: #fa5838;
+    font-weight: 600;
+}
+
+#DiscountModal1 .modal-body .item-discount .discount-img {
+    width: 40%;
+}
+
+#DiscountModal1 .modal-body .item-discount .btn-select {
+    text-align: end;
+}
+
+#DiscountModal1 .modal-body .item-discount button {
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 10%;
+}
+
+
+.no-discount-container {
+    padding-bottom: 10%;
+    padding-top: 5%;
+    text-align: center;
+}
+
+
+
+/* ----------- discount modal 2 ----------- */
+#DiscountModal2 .modal-body .item-discount .item-discount-title1 {
+    font-size: 13px !important;
+}
+
+#DiscountModal2 .modal-body .item-discount .item-discount-container {
+    margin: 0% 7% 4% 7%;
+    padding: 3% 0 2% 0; 
+}
+
+#DiscountModal2 .modal-body .item-discount .item-discount-main-container {
+    margin-top: -4%;
+}
+
+#DiscountModal2 .modal-body .item-discount .discount-title{
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#DiscountModal2 .modal-body .item-discount .discount-id {
+    color: #fa5838;
+    font-weight: 600;
+}
+
+#DiscountModal2 .modal-body .item-discount .discount-subtitle {
+    font-size: 13px;
+}
+
+#DiscountModal2 .modal-body .item-discount .discount-img {
+    width: 50%;
+}
+
+#DiscountModal2 .modal-body .item-discount .btn-select {
+    text-align: end;
+}
+
+#DiscountModal2 .modal-body .item-discount button {
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 10%;
+}
+
+
+
+
+
+/* ----------- Message Modal ----------- */
+
+#MessageModal .modal-body {
+    padding: 5% 4%;
+}

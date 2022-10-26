@@ -1,0 +1,211 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/*  ------------------------ content ------------------------- */
+
+.content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    /*z-index: 0;*/
+    min-height: 300px;
+    background-color: #F4F4F4;
+}
+
+/*  ------------------------ menu side bar ------------------------- */
+#menu ul {
+    background: white;
+    /*min-width: 100px;*/
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+#menu li {
+    width: auto;
+    min-height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 1em;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    display: block;
+}
+
+#menu li:hover {
+    background: #fa5838;
+    color: white;
+}
+
+#menu li:active {
+    background: #550000;
+    color: white;
+}
+
+#menu li a:hover, active {
+    color: white;
+}
+
+.list-item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*  ------------------------ menu ngang ------------------------- */
+
+div.filter-sidebar {
+    background: #CCCCCC;
+    padding: 5px;
+}
+
+.filter-sidebar > span{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+    padding: 6px;
+}
+
+/*-----------------------*/
+.filter-sidebar > a {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    
+    text-decoration: none;
+    color: initial;
+    background-color: white;
+    border-radius: 4px;
+    padding: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+}
+
+.filter-sidebar > a:hover {
+    background: #fa5838;
+    color:white;
+}
+
+.filter-sidebar > a:active {
+    background: #550000;
+    color:white;
+}
+
+.filter-sidebar > div {
+    margin-right: 5px;
+}
+
+/*  ------------------------ danh muc ------------------------- */
+div.category {
+    margin: 15px 0px 15px 0px;
+    font-weight: bold;
+}
+
+/*  ------------------------ card ------------------------- */
+div.list-item  div.card {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+div.card p.card-text{
+    font-size: 15px; 
+    font-weight: 495;
+}
+
+div.card div.evaluate span.amount {
+    color:#555555;
+    font-size: small;
+}
+
+div.card div.price span.reduced-price {
+    text-decoration-line: line-through; 
+    color:	#777777;
+}
+
+div.card div.price span.retail-price {
+    color: red;
+    font-weight: 500;
+}
+
+div.card a.add-to-cart {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    
+    text-decoration: none;
+    color: initial;
+    background-color: white;
+    border-radius: 4px;
+    padding: 4px;
+    border: 1px dashed #550000;
+    color: #550000;
+
+    margin-top: 6px;
+    margin-bottom: 0px;
+}
+
+div.card a.add-to-cart:hover {
+    background: #fa5838;
+}
+
+div.card a.add-to-cart:active {
+    background: #550000;
+    color: white;
+}
+
+div.list-item a {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+}
+
+div.list-item a:hover {
+    border: 1px #990000 solid;
+    
+}
+
+/*  ------------------------ seen more ------------------------- */
+a.seen-more {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    
+    text-decoration: none;
+    color: initial;
+    background-color: white;
+    border-radius: 4px;
+    padding: 0px 5px;
+    border: 1px dashed #550000;
+    color: #550000;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+a.seen-more:hover {
+    background: #fa5838;
+}
+
+a.seen-more:active {
+    background: #550000;
+    color: white;
+}

@@ -1,0 +1,27 @@
+/* CSS used here will be applied after bootstrap.css */
+.carousel {
+    margin-top: 20px;
+}
+
+.item .thumb {
+	width: 25%;
+	cursor: pointer;
+	float: left;
+}
+
+.item .thumb img {
+	width: 100%;
+	margin: 2px;
+	height: 100%;
+}
+
+
+#carousel img {
+	width: 100%;
+	height: auto !important;
+}
+
+
+.product-img-container {
+	margin: auto;
+}

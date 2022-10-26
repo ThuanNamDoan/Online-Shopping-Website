@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home/style.css">
+    
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!--------- container ----------->
+    <div class="container-fuild">
+        <%- include('../layout/header-main.ejs'); %>
+    </div>
+    <!--------- end header ----------->
+    
+    <!--------- content----------->
+    <div id="content" class="container-fuild">
+
+        <!-- carousel -->
+        <div id="row" class="row">
+            <div id="carouselPannel" class="carousel slide col-9" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselPannel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselPannel" data-slide-to="1"></li>
+                    <li data-target="#carouselPannel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 img-fluid" src="/images/home/apple.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="/images/home/comboapple.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 img-fluid" src="/images/home/dan.jpg" alt="Third slide">
+                    </div>
+                </div>
+            </div>
+
+            <div id="advertise-img" class="col">
+                <div id="advertise-img-item-1" class="row advertise-img-item">
+                    <img src="/images/home/KhuyenMai1.png" class="img-fluid" alt="">
+
+                </div>
+                <div id="advertise-img-item-2" class="row advertise-img-item">
+                    <img src="/images/home/KhuyenMai2.png" class="img-fluid" alt="">
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end carousel -->
+
+        <!-- Danh muc -->
+        <div id="DanhMuc" class="section">
+            <div class="frame">
+                <div class="header-text">
+                    Danh mục
+                </div>
+
+                <div id="list-DanhMuc">
+                    <a href="/products?id=1&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/DienThoai.png" alt="">
+                        </div>
+                        <span>Điện Thoại-Máy Tính Bảng</span>
+                    </a>
+                    <a href="/products?id=2&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/ThietBiDienTu.png" alt="">
+                        </div>
+                        <span>Điện Tử-Điện Lạnh</span>
+                    </a>
+                    <a href="/products?id=3&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/PhuKienThietBiSo.png" alt="">
+                        </div>
+                        <span>Phụ Kiện-Thiệt Bị Số</span>
+                    </a>
+                    <a href="/products?id=4&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/Laptop.png" alt="">
+                        </div>
+                        <span>Laptop-Thiệt bị IT</span>
+                    </a>
+                    <a href="/products?id=5&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/MayAnh.png" alt="">
+                        </div>
+                        <span>Máy Ảnh-Quay Phim</span>
+                    </a>
+                    <a href="/products?id=6&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/DienGiaDung.png" alt="">
+                        </div>
+                        <span>Điện Gia Dụng</span>
+                    </a>
+                    <a href="/products?id=7&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/NhaCuaDoiSong.png" alt="">
+                        </div>
+                        <span>Nhà Cửa Đời Sống</span>
+                    </a>
+                    <a href="/products?id=8&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/HangTieuDung.png" alt="">
+                        </div>
+                        <span>Hàng Tiêu Dùng-Thực PHẩm</span>
+                    </a>
+                    <a href="/products?id=9&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/DoChoi.png" alt="">
+                        </div>
+                        <span>Đồ Chời Mẹ & Bé</span>
+                    </a>
+                    <a href="/products?id=10&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/LamDep.png" alt="">
+                        </div>
+                        <span>Làm Đẹp-Sức Khỏe</span>
+                    </a>
+                    <a href="/products?id=11&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/ThoiTrang.png" alt="">
+                        </div>
+                        <span>Thời Trang-Phụ Kiện</span>
+                    </a>
+                    <a href="/products?id=12&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/TheThaoDaNgoai.png" alt="">
+                        </div>
+                        <span>Thể Thao-Dã Ngoại</span>
+                    </a>
+                    <a href="/products?id=13&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/XeMay.png" alt="">
+                        </div>
+                        <span>Xe Máy, Ô tô, Xe Đạp</span>
+                    </a>
+                    <a href="/products?id=14&&count=6" class="item">
+                        <div class="DM-img">
+                            <img src="/images/home/HangQuocTe.png" alt="">
+                        </div>
+                        <span>Hàng quốc tế</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- end Danh muc -->
+        
+        <!-- San pham ban chay nhat -->
+        <div id="BestSale">
+            <div class="header-text">Sản phẩm bán chạy nhất</div>
+            <div class="list-bestsale section">
+                <!-- Nike 19 -->
+                
+                <div class="card">
+                    <img id="top-1-product"
+                        src="https://64.media.tumblr.com/56e0de54db427ddc2d8ba4f0717f9b6c/tumblr_otwzm1Sbb81runoqyo1_540.gifv">
+                    <div class="card-body">
+                        <h5 class="card-title">Air Structure 1</h5>
+                        <img src="https://i.ibb.co/R0Y8T8r/nike19.png" alt="Nike 19" class="card__image card__will-animate">
+                        <div class="product-price">50$</div>                        
+                        <a href="#" class="btn">Mua hàng</a>                        
+                    </div>
+                </div>
+                <!-- Nike Solstice -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Solstice</h5>
+                        <img src="https://i.ibb.co/ZMVHp6x/nike-air-solstice.png" alt="Nike Solstice" class="card__image card__will-animate">
+                        <div class="product-price">60$</div>                        
+                        <a href="#" class="btn">Mua hàng</a>                        
+                    </div>
+                </div>
+                <!-- Nike Huarache -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Huarache</h5>
+                        <img src="https://i.ibb.co/9bc3SYK/nike-safari.png" alt="Nike Huarache" class="card__image card__will-animate">
+                        <div class="product-price">70$</div>                        
+                        <a href="#" class="btn">Mua hàng</a>                        
+                    </div>
+                </div>
+                <!-- Nike Black -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Black</h5>
+                        <img src="/images/home/Nike Black.png" alt="Nike 19" class="card__image card__will-animate">
+                        <div class="product-price">50$</div>                        
+                        <a href="#" class="btn">Mua hàng</a>                        
+                    </div>
+                </div>
+                <div class="card">
+                   <div class="card-body">
+                        <h5 class="card-title">Addidas Smith</h5>
+                        <img src="/images/home/addidas smith.png" alt="Nike 19" class="card__image card__will-animate">
+                        <div class="product-price">50$</div>                        
+                        <a href="#" class="btn">Mua hàng</a>                        
+                    </div>
+                </div>
+                <div class="card">
+                   <div class="card-body">
+                        <h5 class="card-title">Nike Swooch</h5>
+                        <img src="/images/home/Nike Swooch 2.png" alt="Nike 19" class="card__image card__will-animate">
+                        <div class="product-price">50$</div>                        
+                        <a href="#" class="btn">Mua hàng</a>                        
+                    </div>
+                </div>
+                <div class="card">
+                   <div class="card-body">
+                        <h5 class="card-title">Nike Swooch 2</h5>
+                        <img src="/images/home/Nike Swooch.png" alt="Nike 19" class="card__image card__will-animate">
+                        <div class="product-price">50$</div>                        
+                        <a href="#" class="btn">Mua hàng</a>                        
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <!-- end San pham ban chay nhat -->
+
+    </div>
+
+    <!--------- end content----------->
+
+    
+
+    
+
+
+
+    <%- include('../layout/footer.ejs'); %>
+
+    <!--------- end footer ----------->
+
+    <!--------- end container ----------->
+    
+    <!-- javascript -->
+    <script src="/javascripts/layout/header-main/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

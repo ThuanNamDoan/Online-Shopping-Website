@@ -1,0 +1,5 @@
+insert into SanPham_KichThuoc(MaSP, KichThuoc) values (1, N'S')
+insert into SanPham_KichThuoc(MaSP, KichThuoc) values (2, N'M')
+insert into SanPham_KichThuoc(MaSP, KichThuoc) values (3, N'X')
+insert into SanPham_KichThuoc(MaSP, KichThuoc) values (4, N'XL')
+insert into SanPham_KichThuoc(MaSP, KichThuoc) values (5, N'XLL')

@@ -1,0 +1,34 @@
+/*  ----------------------- footer ---------------------- */
+
+.footer {
+    padding: 30px 50px;
+    margin: 0px;
+    background-color: #fa5838;
+    color: white;
+}
+
+.footer #footer-logo {
+    width: 70%;
+    height: auto;
+    margin: 0 15%;
+    filter: drop-shadow(0px 0px 5px white); ;
+}
+
+.footer #footer-slogan {
+    font-size: 15px;
+    text-align: center;
+    line-height:110%;
+}
+
+.footer .footer-title {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.footer .footer-link {
+    font-size: 15px;
+}
+
+.footer a.footer-link {
+    color: white;
+}

@@ -1,0 +1,265 @@
+<!--------- header ----------->
+<div class='header'>
+    <!-- SignIn SignUp Account -->
+    <div class='header-account'>
+        <div class='row justify-content-end'>
+            <div class='col-md-8'></div>
+            <div class='col-md-4 align-self-center' style="text-align: end;">
+                <!-- Chưa SignIn SignUp -->
+                <div id='signin-signup'>
+                    <div class='signin-signup' data-toggle="modal" data-target="#SignUpModal">
+                        <a href="#">Đăng ký</a>
+                    </div>
+                    <p style="display: inline" >&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+                    <div class='signin-signup' data-toggle="modal" data-target="#SignInModal">
+                        <a href="#">Đăng nhập</a>
+                    </div>
+                </div>
+                <!-- Đã SignIn SignUp -->
+                <div id='account'>
+                    <!-- bell message -->
+                    <div class='signin-signup bell-message'>
+                        <div class="dropdown">
+                            <span class='dropbtn'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                            </svg>
+                            </span>
+                            <div class="dropdown-content">
+                                <span style="color:#a6a6a6; font-size: 14px; padding: 15px 0px 0px 15px;">Thông báo mới nhất</span>
+                                <!-- item-mess 1-->
+                                <a href="#">
+                                    <div class='item-mess'>   
+                                        <div class='row no-gutters'>
+                                            <div class='col-md-3 col-sm-2 col-2'>
+                                                <img class='img-fluid' src="/images/layout/header-main/voucher-1.png">
+                                            </div>
+                                            <div class='col-md-9 col-sm-7 col-7 align-self-center pl-2'>
+                                                <span class='name-item-mess'>Bạn được tặng Voucher</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- item-mess 2-->
+                                <a href="#">
+                                    <div class='item-mess'>   
+                                        <div class='row no-gutters'>
+                                            <div class='col-md-3 col-sm-2 col-2'>
+                                                <img class='img-fluid' src="/images/layout/header-main/voucher-2.png">
+                                            </div>
+                                            <div class='col-md-9 col-sm-7 col-7 align-self-center pl-2'>
+                                                <span class='name-item-mess'>Bạn được tặng Voucher</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- item-mess 3-->
+                                <a href="#">
+                                    <div class='item-mess'>   
+                                        <div class='row no-gutters'>
+                                            <div class='col-md-3 col-sm-2 col-2'>
+                                                <img class='img-fluid' src="/images/layout/header-main/voucher-3.png">
+                                            </div>
+                                            <div class='col-md-9 col-sm-7 col-7 align-self-center pl-2'>
+                                                <span class='name-item-mess'>Bạn được tặng Voucher</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="display: inline" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+                    <!-- account -->
+                    <div class='signin-signup'>
+                        <a><img class='img-user img-fluid' src="/images/layout/header-main/user-icon.png"></a>
+                        <div class="dropdown">
+                            <a class="dropbtn user-name" id='userName'>Anh Thi</a>
+                            <div class="dropdown-content">
+                            <a href="#">Tài khoản của tôi</a>
+                            <a href="#" id="don-mua">Đơn mua</a>
+                            <a id='log-out'>Đăng xuất</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign Up -->
+    <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">Đăng ký</span>
+                    <span class="modal-subtitle" id='signin-btn-form-signup'>Đăng nhập</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class='form-row'>
+                            <div class="form-group col-md-6">
+                                <label for="InputNameSignUp">Họ và tên</label>
+                                <input type="text" class="form-control" id="InputNameSignUp" placeholder="Nhập họ và tên">
+                                <span class='check-input' id='checkNameSignUp'>Nhập sai</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputEmailSignUp">Email</label>
+                                <input type="email" class="form-control" id="InputEmailSignUp" aria-describedby="emailHelp" placeholder="Nhập email">
+                                <span class='check-input' id='checkEmailSignUp'>Nhập sai</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="InputPhoneSignUp">Số điện thoại</label>
+                                <input type="tel" class="form-control" id="InputPhoneSignUp" placeholder="Nhập số điện thoại">
+                                <span class='check-input' id='checkPhoneSignUp'>Nhập sai</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputSexSignUp">Giới tính</label>
+                                <select class="custom-select" id="InputSexSignUp">
+                                    <option selected>Chọn giới tính</option>
+                                    <option value="1">Nam</option>
+                                    <option value="2">Nữ</option>
+                                    <option value="3">Khác</option>
+                                </select>
+                                <span class='check-input' id='checkSexSignUp'>Nhập sai</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputAdressSignUp">Số Nhà, Đường</label>
+                            <input type="text" class="form-control" id="InputAdressSignUp" placeholder="Nhập Số Nhà, Đường">
+                            <span class='check-input' id='checkAdressSignUp'>Nhập sai</span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="InputDistrictSignUp">Quận/Huyện</label>
+                                <select class="custom-select" id="InputDistrictSignUp">
+                                    <option >Chọn Quận/Huyện</option>
+                                    <option class = 'option-district' value="1">Quận 1</option>
+                                    <option value="2" class = 'option-district'>Quận 2</option>
+                                    <option value="3">Quận 3</option>
+                                    <option value="4">Quận 4</option>
+                                    <option value="5">Quận 5</option>
+                                    <option value="6">Quận 6</option>
+                                    <option value="7">Quận 7</option>
+                                    <option value="8">Quận 8</option>
+                                    <option value="9">Quận 9</option>
+                                    <option value="10">Quận 10</option>
+                                    <option value="11">Quận 11</option>
+                                    <option value="12">Quận 12</option>
+                                    <option value="13">Quận Bình Thành</option>
+                                    <option value="14">Quận Gò Vấp</option>
+                                    <option value="15">Quận Thủ Đức</option>
+                                    <option value="16">Quận Bình Tân</option>
+                                    <option value="17">Quận Tân Phú</option>
+                                    <option value="18">Quận Tân Bình</option>
+                                    <option value="19">Quận Phú Nhuận</option>
+                                    <option value="20">Huyện Củ Chi</option>
+                                    <option value="21">Huyện Hóc Môn</option>
+                                    <option value="22">Huyện Bình Chánh</option>
+                                    <option value="23">Huyện Nhà Bè</option>
+                                    <option value="24">Huyện Cần Giờ</option>
+                                </select>
+                                <span class='check-input' id='checkDistrictSignUp'>Nhập sai</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputWardSignUp">Phường/Xã</label>
+                                <select class="custom-select" id="InputWardSignUp">
+                                    <option selected>Chọn Phường/Xã</option>
+                                </select>
+                                <span class='check-input' id='checkWardSignUp'>Nhập sai</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputUserNameSignUp">Tên đăng nhập</label>
+                            <input type="text" class="form-control" id="InputUserNameSignUp" placeholder="Nhập tên đăng nhập">
+                            <span class='check-input' id='checkUserNameSignUp'>Nhập sai</span>
+                        </div>
+                        <div class="form-group">
+                          <label for="InputPasswordSignUp">Mật khẩu</label>
+                          <input type="password" class="form-control" id="InputPasswordSignUp" placeholder="Nhập mật khẩu">
+                          <span class='check-input' id='checkPassSignUp'>Nhập sai</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="ConfirmPasswordSignUp">Xác nhận khẩu</label>
+                            <input type="password" class="form-control" id="ConfirmPasswordSignUp" placeholder="Nhập lại mật khẩu">
+                            <span class='check-input' id='checkConfirmPassSignUp'>Nhập sai</span>
+                          </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" id='btn-cancel-signup'>Xóa</button>
+                    <button type="button" class="btn btn-submit" id='btn-signup'>Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sign In -->
+    <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">Đăng nhập</span>
+                    <span class="modal-subtitle" id='signup-btn-form-signin'>Đăng ký</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="InputUserName">Tên đăng nhập</label>
+                            <input type="text" class="form-control" id="InputUserNameSignIn" placeholder="Nhập tên đăng nhập">
+                            <span class='check-input' id='checkUserNameSignIn'>#</span>
+                        </div>
+                        <div class="form-group">
+                          <label for="InputPassword">Mật khẩu</label>
+                          <input type="password" class="form-control" id="InputPasswordSignIn" placeholder="Nhập mật khẩu">
+                          <span class='check-input' id='checkPassSignIn'>#</span>
+                        </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" id='btn-cancel-signin'>Xóa</button>
+                <button id='btn-signin' type="button" class="btn btn-submit">Đăng nhập</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class='row'>
+         <!-- logo -->
+        <div class='col-md-2 col-sm-3 col-2 pl-3'>
+            <a href="/"><img class='img-logo img-fluid' src="/images/layout/header-main/logo.png"></a>
+        </div>
+        
+        <!-- search bar -->
+        <div class='col-md-8 col-sm-7 col-8 text-end'>
+            <div class="searchbox-wrap">
+                <input class='input-search' id="search-input" type="text" placeholder="Tìm kiếm">
+                <button class="btn-search" id="search-btn"><span class="icon-search"><i class="fa fa-search"></i></span> </button>
+            </div>
+        </div>
+
+        <!-- shopping bag -->
+        <div class="shopping-bag col-md-2 col-sm-2 col-2 text-center align-self-center ">
+            <div class='dropdown'>
+                <a class="dropbtn" href="/cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <span class='badge cartCount' id="number-cart-products"></span>
+                </a>
+                <div class="dropdown-content pt-2">
+                    <span style="color:#a6a6a6; font-size: 14px; padding: 15px 0px 0px 15px">Sản phẩm mới thêm</span>
+                    <div id="cart-dropdown"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!--------- end header ----------->
